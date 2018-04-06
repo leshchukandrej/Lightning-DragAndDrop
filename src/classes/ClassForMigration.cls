@@ -1,7 +1,7 @@
 /**
  * Created by ctuser on 05.04.2018.
  */
-//Hello from Trigger
+//Hello from Trigger q
 public with sharing class ClassForMigration {
 
     public static Account insertAccount(String name) {
