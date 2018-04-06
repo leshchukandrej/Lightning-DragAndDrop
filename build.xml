@@ -20,8 +20,8 @@
 			     username="${sf.username}" 
 			     password="${sf.password}" 
 			     serverurl="${sf.serverurl}" 
-			     deployroot="src" 
-			     <runTest>*</runTest>/>
+			     deployroot="src">
+			     <runTest>*</runTest></sf:deploy>
 		
 	</target>
 </project>
