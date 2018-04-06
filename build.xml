@@ -21,7 +21,7 @@
 			     password="${sf.password}" 
 			     serverurl="${sf.serverurl}" 
 			     deployroot="src">
-			     <runTest>*</runTest></sf:deploy>
+			     <runLocalTest>*</runLocalTest></sf:deploy>
 		
 	</target>
 </project>
