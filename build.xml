@@ -20,8 +20,9 @@
 			     username="${sf.username}" 
 			     password="${sf.password}" 
 			     serverurl="${sf.serverurl}" 
-			     deployroot="src">
-			     <runLocalTests/></sf:deploy>
+			     deployroot="src"
+			     testLevel="RunLocalTests">
+			     </sf:deploy>
 		
 	</target>
 </project>
