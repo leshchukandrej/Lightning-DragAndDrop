@@ -18,7 +18,7 @@
 			     username="${sf.username}" 
 			     password="${sf.password}" 
 			     serverurl="${sf.serverurl}" 
-			     deployroot="./src" />
+			     deployroot="src" />
 	</target>
 </project>
     
