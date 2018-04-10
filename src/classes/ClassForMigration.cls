@@ -5,7 +5,7 @@
 public with sharing class ClassForMigration {
 
     public static Account insertAccount(String name) {
-        Account acc = new Account(Name = name);
+        Account acc = new Account(Name = name);//hello
         insert acc;
         return acc;
     }
