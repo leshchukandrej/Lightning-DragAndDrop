@@ -1,0 +1,27 @@
+<!--
+ - Created by ctuser on 11.12.2018.
+ -->
+
+<aura:component description="Dropable">
+
+
+    <aura:attribute name="elements" type="List"/>
+
+    <aura:attribute name="draggedFromHere" type="Boolean"/>
+
+    <aura:handler event="c:DragAndDrop_Event" name="onDrag" action="{!c.onDrag}" includeFacets="true"/>
+    <aura:registerEvent name="onDrop" type="c:DragAndDrop_Event"/>
+    <aura:registerEvent name="changeOrder" type="c:DragAndDrop_Event"/>
+    <aura:registerEvent name="onDragEnd2" type="c:DragAndDrop_Event"/>
+    <aura:registerEvent name="dropIndex" type="c:DragAndDrop_Event"/>
+
+    <aura:handler event="c:DragAndDrop_Event" name="onDragEnd" action="{!c.onDragEnd}" includeFacets="true"/>
+
+    <div style="border-radius: 5px; min-height: 20px;" class="dropElement" ondrop="{!c.onDrop}" ondragover="{!c.onDragOver}" ondragenter="{!c.lightZone}"
+         ondragleave="{!c.hideZone}" aura:id="dragzone">
+
+        {!v.body}
+
+    </div>
+
+</aura:component>

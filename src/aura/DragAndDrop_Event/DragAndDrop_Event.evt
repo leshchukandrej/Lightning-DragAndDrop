@@ -1,0 +1,10 @@
+<!--
+ - Created by ctuser on 11.12.2018.
+ -->
+
+<aura:event type="COMPONENT" description="DragAndDrop_Event">
+
+    <aura:attribute name="element" type="Object"/>
+    <aura:attribute name="indexTo" type="Integer"/>
+
+</aura:event>

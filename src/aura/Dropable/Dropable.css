@@ -1,0 +1,15 @@
+/**
+ * Created by ctuser on 12.12.2018.
+ */
+.THIS {
+
+}
+
+.THIS.dragOver {
+    border: blue dotted thin;
+}
+
+.THIS.dragEnter {
+    /*background-color: #eee;*/
+    border: blue double thin;
+}

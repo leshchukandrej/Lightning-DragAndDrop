@@ -1,0 +1,19 @@
+<!--
+ - Created by ctuser on 12.12.2018.
+ -->
+
+<aura:component description="DragAndDrop">
+
+    <aura:handler event="c:DragAndDrop_Event" name="onDrag" action="{!c.onDrag}" includeFacets="true"/>
+    <aura:handler event="c:DragAndDrop_Event" name="onDrop" action="{!c.onDrop}" includeFacets="true"/>
+    <aura:handler event="c:DragAndDrop_Event" name="onDragEnd2" action="{!c.onDragEnd}" includeFacets="true"/>
+
+    <aura:attribute name="draggedFromHere" type="Boolean"/>
+
+    <aura:attribute name="element" type="Object"/>
+    <aura:attribute name="elementIndex" type="Decimal"/>
+    <aura:attribute name="isDragged" type="Boolean" default="false"/>
+
+    {!v.body}
+
+</aura:component>
