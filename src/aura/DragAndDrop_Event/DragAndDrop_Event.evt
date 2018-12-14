@@ -6,5 +6,6 @@
 
     <aura:attribute name="element" type="Object"/>
     <aura:attribute name="indexTo" type="Integer"/>
+    <aura:attribute name="cmp" type="Aura.Component"/>
 
 </aura:event>

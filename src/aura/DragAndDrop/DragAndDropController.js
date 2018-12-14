@@ -4,45 +4,30 @@
 ({
 
     onDrag: function (component, event, helper) {
-        component.set('v.draggedFromHere', true)
+        event.stopPropagation();
         console.log('dragStart');
+        component.set('v.isDragged', true);
         component.set('v.element', event.getParam('element'))
+        component.set('v.cmpFrom', event.getParam('cmp'))
     },
 
     onDrop: function (component, event, helper) {
-        // debugger
-        if (component.get('v.draggedFromHere')) {
+        event.stopPropagation()
+        if (component.get('v.isDragged')) {
             console.log('dropped');
             helper.dropElement(component, event);
-        }
-
-    },
-
-    setElementIndex: function (component, event, helper) {
-        if (component.get('v.draggedFromHere')) {
-            var index = event.getParam('element');
-            component.set('v.elementIndex', index);
-        }
-    },
-
-    onDragEnd: function (component, event, helper) {
-        debugger
-        console.log('dragEnd p3');
-
-        var isDragged = component.get('v.isDragged');
-        if (isDragged) {
-            var cmp = event.getParam('element');
-            var element = component.get('v.element')
-            var elements = cmp.get('v.elements');
-            elements = helper.remove(elements, element)
-            setTimeout($A.getCallback(() => {
-                cmp.set('v.elements', elements);
-            }), 0)
-            cmp.set('v.draggedFromHere', false)
+            component.set('v.cmpFrom');
             component.set('v.isDragged', false);
+        } else {
+            alert('This is not correct dropzone!');
         }
-        component.set('v.draggedFromHere', false);
+    },
 
+    onDragStopped: function(component, event, helper) {
+        event.stopPropagation()
+        component.set('v.isDragged', false);
+        component.set('v.element');
+        component.set('v.cmpFrom');
     },
 
 })

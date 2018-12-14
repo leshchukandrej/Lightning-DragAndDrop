@@ -15,24 +15,24 @@
 
     fireOnDropEvent: function(component, indexTo) {
         var evt = component.getEvent("onDrop");
-        evt.setParam('element', component);
+        evt.setParam('cmp', component);
         evt.setParam('indexTo', indexTo);
         evt.fire()
     },
 
-    lightZone: function(component, event) {
+    lightZone: function(component) {
         var dragzone = component.find('dragzone')
         $A.util.addClass(dragzone, 'dragOver');
     },
 
-    hideZone: function(component, event) {
+    hideZone: function(component) {
         var dragzone = component.find('dragzone');
         $A.util.removeClass(dragzone, 'dragOver');
     },
 
     findDraggableElement: function(domElement) {
         try {
-            return domElement.classList.contains('dragElement')? domElement : this.findDraggableElement(domElement.parentElement);
+            return domElement.classList.contains('draggable')? domElement : this.findDraggableElement(domElement.parentElement);
         } catch (e) {
             return null
         }

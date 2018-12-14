@@ -3,17 +3,24 @@
  */
 ({
 
-    dragStart: function(component, event, helper) {
-        var evt = component.getEvent("onDrag");
-        evt.setParam('element', component.get('v.obj'))
+    dragStart: function (component, event, helper) {
+        var evt = component.getEvent("onDragStart");
+        evt.setParam('element', component.get('v.obj'));
+        evt.setParam('cmp', component);
         evt.fire()
+        document.body.onmousedown = ()=> {
+            helper.removeEventListener();
+            var evt = component.getEvent('onDragStopped');
+            if (evt) {
+                evt.fire()
+            }
+        }
+
     },
 
-    onDragEnd: function(component, event, helper) {
+    onDragEnd: function (component, event, helper) {
         console.log('dragEnd p1');
-        setTimeout($A.getCallback(() => {
-            component.getEvent("onDragEnd").fire();
-        }))
-    }
+        component.getEvent("onDragEnd").fire();
+    },
 
 })

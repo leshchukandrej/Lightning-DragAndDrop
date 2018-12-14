@@ -4,13 +4,13 @@
 
 <aura:component description="Draggable">
 
-    <aura:attribute name="obj" type="Object"/>
+    <aura:attribute name="obj" type="Object" required="true"/>
     <aura:attribute name="index" type="Decimal"/>
 
-    <aura:registerEvent name="onDrag" type="c:DragAndDrop_Event"/>
-    <aura:registerEvent name="onDragEnd" type="c:DragAndDrop_Event"/>
+    <aura:registerEvent name="onDragStart" type="c:DragAndDrop_Event"/>
+    <aura:registerEvent name="onDragStopped" type="c:DragAndDrop_Event"/>
 
-    <div draggable="true" id="{!v.index}" class="dragElement" ondragstart="{!c.dragStart}" ondragend="{!c.onDragEnd}">
+    <div draggable="true" id="{!v.index}" class="draggable" ondragstart="{!c.dragStart}">
 
             {!v.body}
 
