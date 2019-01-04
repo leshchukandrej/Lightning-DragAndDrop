@@ -6,7 +6,7 @@ Example of using this components:
 
 '''
 
-<c:DragAndDrop>
+        <c:DragAndDrop>
 
         <!-- <YourHTMLcode1> -->
 
