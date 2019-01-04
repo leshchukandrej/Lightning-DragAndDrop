@@ -1,6 +1,6 @@
 # Lightning-DragAndDrop
 
-Components that gives you components opportunity to uses drag and drop features.
+Components that gives your components opportunity to uses drag and drop features.
 
 Example of using this components:
 
