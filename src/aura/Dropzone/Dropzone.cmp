@@ -10,11 +10,12 @@
     <aura:registerEvent name="onDrop" type="c:DragAndDrop_Event"/>
     <aura:registerEvent name="onDrag2" type="c:DragAndDrop_Event"/>
 
-    <aura:attribute name="id" type="Integer" access="public"/> 
+    <aura:attribute name="id" type="Integer" access="public"/>
     <aura:attribute name="elements" type="List" required="true"/>
 
-    <div style="border-radius: 5px; min-height: 20px;" class="dropzone" ondrop="{!c.onDrop}" ondragover="{!c.onDragOver}" ondragenter="{!c.lightZone}"
-         ondragleave="{!c.hideZone}" aura:id="dragzone">
+    <aura:attribute name="style" type="String" access="global"/>
+
+    <div style="{!v.style}" class="dropzone" ondrop="{!c.onDrop}" ondragover="{!c.onDragOver}" ondragleave="{!c.hideZone}" aura:id="dropzone">
 
             {!v.body}
 

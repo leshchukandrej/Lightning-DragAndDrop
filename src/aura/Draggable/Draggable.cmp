@@ -10,7 +10,8 @@
     <aura:registerEvent name="onDragStart" type="c:DragAndDrop_Event"/>
     <aura:registerEvent name="onDragStopped" type="c:DragAndDrop_Event"/>
 
-    <div draggable="true" id="{!v.index}" class="draggable" ondragstart="{!c.dragStart}">
+    <div aura:id="draggable" draggable="true" id="{!v.index}" class="draggable" ondragover="{!c.lightElement}"
+         ondrop="{!c.hideElement}" ondragleave="{!c.hideElement}" ondragstart="{!c.dragStart}" ondragend="{!c.dragEnd}">
 
             {!v.body}
 

@@ -9,7 +9,6 @@
         var elements = cmpTo.get('v.elements');
         var element = component.get('v.element')
         var cmpFrom = component.get('v.cmpFrom');
-
         if (cmpFrom.get('v.id') === cmpTo.get('v.id') && !index) {
         } else {
             elements = this.remove(elements, element);

@@ -18,7 +18,7 @@
     onDrop: function (component, event, helper) {
         var indexTo = helper.findIndexTo(component, event);
         helper.fireOnDropEvent(component, indexTo);
-        helper.hideZone(component, event);
+        helper.hideZone(component);
     },
 
     onDragOver: function (component, event, helper) {
@@ -26,12 +26,8 @@
         helper.lightZone(component, event);
     },
 
-    lightZone: function (component, event, helper) {
-        helper.lightZone(component);
-    },
-
     hideZone: function (component, event, helper) {
         helper.hideZone(component);
-    }
+    },
 
 })

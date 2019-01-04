@@ -15,6 +15,10 @@
 
     <aura:attribute name="cmpFrom" type="Aura.Component" access="private"/>
 
-    {!v.body}
+    <div class="{!v.isDragged ? 'dragAndDrop' : ''}">
+
+            {!v.body} 
+
+    </div>
 
 </aura:component>

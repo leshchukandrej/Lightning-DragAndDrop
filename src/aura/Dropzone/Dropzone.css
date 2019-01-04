@@ -1,5 +1,9 @@
-
-
 .THIS.dragOver {
+    border: blue dotted medium !important;
+}
+
+.THIS.dropzone:hover:not(:active) .draggable:not(:hover) {
+    opacity: 0.7;
     border: blue dotted thin;
+    border-radius: 5px;
 }

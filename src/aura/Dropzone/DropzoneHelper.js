@@ -3,7 +3,7 @@
  */
 ({
 
-    findIndexTo: function(component, event) {
+    findIndexTo: function (component, event) {
         var domElement = this.findDraggableElement(event.target);
         if (domElement) {
             console.log(domElement.id);
@@ -13,29 +13,29 @@
         }
     },
 
-    fireOnDropEvent: function(component, indexTo) {
+    fireOnDropEvent: function (component, indexTo) {
         var evt = component.getEvent("onDrop");
         evt.setParam('cmp', component);
         evt.setParam('indexTo', indexTo);
         evt.fire()
     },
 
-    lightZone: function(component) {
-        var dragzone = component.find('dragzone')
-        $A.util.addClass(dragzone, 'dragOver');
+    lightZone: function (component) {
+        var dropzone = component.find('dropzone')
+        $A.util.addClass(dropzone, 'dragOver');
     },
 
-    hideZone: function(component) {
-        var dragzone = component.find('dragzone');
-        $A.util.removeClass(dragzone, 'dragOver');
+    hideZone: function (component) {
+        var dropzone = component.find('dropzone');
+        $A.util.removeClass(dropzone, 'dragOver');
     },
 
-    findDraggableElement: function(domElement) {
+    findDraggableElement: function (domElement) {
         try {
-            return domElement.classList.contains('draggable')? domElement : this.findDraggableElement(domElement.parentElement);
+            return domElement.classList.contains('draggable') ? domElement : this.findDraggableElement(domElement.parentElement);
         } catch (e) {
             return null
         }
-    }
+    },
 
 })

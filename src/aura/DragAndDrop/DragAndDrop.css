@@ -1,0 +1,7 @@
+/**
+ * Created by ctuser on 04.01.2019.
+ */
+.THIS.dragAndDrop .dropzone{
+    border-radius: 5px;
+    border: grey dotted thin;
+}

@@ -8,19 +8,29 @@
         evt.setParam('element', component.get('v.obj'));
         evt.setParam('cmp', component);
         evt.fire()
-        document.body.onmousedown = ()=> {
+        document.body.onmousedown = () => {
             helper.removeEventListener();
             var evt = component.getEvent('onDragStopped');
             if (evt) {
                 evt.fire()
             }
         }
-
     },
 
-    onDragEnd: function (component, event, helper) {
-        console.log('dragEnd p1');
-        component.getEvent("onDragEnd").fire();
+    dragEnd: function(component, event, helper) {
+        helper.removeEventListener();
+        var evt = component.getEvent('onDragStopped');
+        if (evt) {
+            evt.fire()
+        }
     },
+
+    lightElement: function(component, event, helper) {
+        $A.util.addClass(component.find('draggable'), 'lighted')
+    },
+
+    hideElement: function(component) {
+        $A.util.removeClass(component.find('draggable'), 'lighted')
+    }
 
 })
