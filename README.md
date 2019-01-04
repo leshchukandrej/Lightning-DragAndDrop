@@ -24,7 +24,7 @@ Example of using this components:
 
                         <!--To move items from specific dropzones, you need to push them into Dropzone body -->
 
-                        ** To have feature for changing items order inside Dropzone, in Draggable fill in index attribute value **
+                        __ To have feature for changing items order inside Dropzone, in Draggable fill in index attribute value __
 
                         <c:Draggable obj="{!item}" index="{!i}">
 
